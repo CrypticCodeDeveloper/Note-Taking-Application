@@ -1,0 +1,336 @@
+@import url("./fonts/font.css");
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+img {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  transition: all 600ms;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(
+    90deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  padding-left: 20px;
+  /* display: grid;
+  grid-template-columns: repeat(2, 1fr); */
+  /* overflow: hidden; */
+}
+main {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+h1 {
+  font-weight: 700; /* Poppins Bold */
+}
+.hide {
+  display: none;
+}
+.head {
+  /* margin: 20px 0; */
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+.header-wrapper {
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  padding-top: 12px;
+  padding-right: 15px;
+  margin-bottom: 20px;
+}
+.head .title {
+  font-size: 40px;
+  font-style: italic;
+  font-weight: bolder;
+  color: rgb(211, 211, 211);
+}
+.user-note-container {
+  background-color: #ffffff;
+  max-width: fit-content;
+  padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 600ms;
+}
+img.user-note {
+  width: 30px;
+  height: 30px;
+}
+.dialog {
+  max-height: 290px;
+  width: 350px;
+  border-radius: 12px;
+  background-color: rgba(128, 128, 128, 0.667);
+  padding: 15px;
+  box-shadow: 2px 2px 8px black;
+  margin: 15px 0;
+}
+.dialog div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  margin-bottom: 15px;
+}
+.dialog div:first-child h1 {
+  color: #242424;
+}
+.dialog div .warning {
+  color: orange;
+  font-size: 12px;
+  font-weight: 500;
+  font-style: italic;
+}
+.dialog #title-input,
+.dialog #text-input {
+  background-color: #ffffff;
+  display: block;
+  width: 320px;
+  height: 35px;
+  margin-bottom: 20px;
+  padding: 8px 0 3px 20px;
+  border-radius: 5px;
+  border: none;
+  font-size: 13px;
+  color: var(--primary-color);
+  outline: none;
+}
+.dialog #title-input {
+  font-family: sans-serif;
+}
+.dialog #text-input {
+  min-width: 320px;
+  max-width: 320px;
+  min-height: 100px;
+  max-height: 100px;
+  font-size: 15px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.dialog .icons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 10px;
+  gap: 12px;
+}
+.notes-wrapper {
+  background: var(--primary-color);
+  min-width: 200px;
+  width: 500px;
+  max-width: 620px;
+  height: 290px;
+  margin: 30px 50px 30px 70px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px black;
+  padding: 30px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: center; */
+  gap: 50px;
+  overflow-y: auto;
+}
+.note {
+  position: relative;
+  background-color: var(--secondary-color);
+  width: 200px;
+  height: 200px;
+  border-radius: 0 12px 12px 12px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 8px 8px 8px 15px;
+}
+.note .heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px dashed black;
+  padding-bottom: 5px;
+}
+.note .heading h1 {
+  font-size: 16px;
+}
+.note .heading p {
+  font-size: 13px;
+}
+.note .note-text {
+  font-style: italic;
+  font-size: 14px;
+  padding-top: 10px;
+}
+
+.note .functions {
+  display: flex;
+  position: absolute;
+  top: 160px;
+  left: 90px;
+  gap: 10px;
+}
+.note .functions img {
+  width: 26px;
+  height: 26px;
+}
+.functions img:hover {
+  scale: 1.2;
+  transform: translateY(-5px);
+}
+.wrapper-2 {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0;
+}
+.display-note {
+  background-color: #ffffffc9;
+  width: 400px;
+  height: 400px;
+  border-radius: 12px;
+  padding: 15px 25px;
+  /* margin: 150px 0 0 200px; */
+}
+.display-note .head-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px dashed black;
+  padding-bottom: 18px;
+}
+.display-note .head-wrapper div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.display-note .head-wrapper div h1 {
+  font-size: 15px;
+  font-style: italic;
+}
+.display-note .head-wrapper div img {
+  width: 35px;
+  height: 35px;
+}
+.display-note p.note-display {
+  margin-top: 18px;
+  font-size: 15px;
+}
+#preview-date {
+  font-size: 13px;
+  width: 100px;
+  margin-left: 10px;
+}
+.dialog form button {
+  padding: 8px 15px;
+  margin-right: 10px;
+  cursor: pointer;
+  background: transparent;
+  border: 3px solid var(--secondary-color);
+  color: white;
+  border-radius: 15px;
+  transition: all 800ms;
+}
+.dialog form button[type="reset"] {
+  background-color: white;
+  color: var(--secondary-color);
+}
+.dialog form button[type="submit"]:hover {
+  color: var(--secondary-color);
+  background-color: white;
+}
+.dialog form button[type="reset"]:hover {
+  background-color: var(--secondary-color);
+  color: white;
+}
+/* hide dialog button */
+#toggle-dialog {
+  padding: 0 10px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  font-size: 12px;
+  cursor: pointer;
+  display: none;
+}
+/* responsive styles */
+@media all and (max-width: 980px) {
+  .notes-wrapper {
+    justify-content: center;
+    min-width: 310px;
+  }
+  .note {
+    width: 300px;
+    height: 240px;
+  }
+  .note .functions {
+    top: 200px;
+    left: 180px;
+  }
+}
+
+@media all and (max-width: 860px) {
+  .note .functions {
+    left: 150px;
+  }
+}
+@media all and (max-width: 765px) {
+  #toggle-dialog {
+    display: block;
+  }
+  main {
+    flex-direction: column;
+    align-items: center;
+  }
+  .head .title {
+    font-size: 35px;
+  }
+  .notes-wrapper div.note {
+    width: 250px;
+  }
+  .notes-wrapper {
+    margin-left: 20px;
+    width: 380px;
+    display: grid;
+  }
+  .wrapper-2 {
+    margin-right: 10px;
+  }
+}
+/* smallest screens */
+@media all and (max-width: 445px) {
+  .head span.title {
+    font-size: 25px;
+  }
+  .notes-wrapper {
+    width: 300px;
+  }
+  div.dialog {
+    width: 330px;
+  }
+  div.dialog form #title-input,
+  div.dialog form textarea {
+    width: 290px;
+  }
+  div.dialog form #text-input {
+    min-width: 290px;
+    max-width: 290px;
+  }
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Note-taking app</title>
+    <!-- link style sheet -->
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header-wrapper">
+        <header class="head">
+          <div class="user-note-container">
+            <img src="./assets/icons/user.png" alt="user_icon" class="user-note" />
+          </div>
+          <span class="title">My Notes</span>
+        </header>
+        <button class="" id="toggle-dialog">Toggle Note Dialog</button>
+      </div>
+      <!-- dialog -->
+      <main>
+        <div class="dialog" id="dialog">
+          <form action="#" onsubmit="notes.createNote()" class="add-note-form">
+            <div>
+              <h1>Add new note</h1>
+              <span class="warning hide">Fields cannot be empty</span>
+            </div>
+            <input
+              type="text"
+              id="title-input"
+              placeholder="Note Title (25 chars max)"
+              name="title"
+              autocomplete="off"
+            />
+            <textarea
+              id="text-input"
+              placeholder="Note Text"
+              wrap="soft"
+              name="text"
+              autocomplete="off"
+            ></textarea>
+            <button type="submit" name="submitBtn" data-noteid="0">
+              Add note
+            </button>
+            <button type="reset" name="reset">Clear fields</button>
+          </form>
+        </div>
+        <!-- notes display -->
+        <div class="notes-wrapper">
+            <!-- Inject notes here -->
+        </div>
+      </div>
+    </div>
+      </main>
+  
+  <!-- Section to show notes full content -->
+    <div class="wrapper-2">
+      <div class="display-note">
+        <div class="head-wrapper">
+          <div>
+            <img src="./assets/icons/post-it.png" alt="notes" />
+            <h1 id="preview-heading">Take Notes!</h1>
+          </div>
+          <p id="preview-date">📅 present</p>
+        </div>
+        <p class="note-display" id="preview-text">
+          This is a guide! <br><br>
+          📌 Click the "Add note" button to click add a new note <br>
+          📌 Click the "clear fields" button to clear all parameters <br><br>
+          <div class="inst-wrapper">
+            <p style="display: flex; align-items: center; gap: 10px;"><img src="./assets/icons/read.png" alt=""> click to read full note</p> <br>
+            <p style="display: flex; align-items: center; gap: 10px;"><img src="./assets/icons/edit.png" alt=""> click to edit note</p> <br>
+            <p style="display: flex; align-items: center; gap: 10px;"><img src="./assets/icons/delete.png" alt=""> click to delete note</p>
+          </div>
+        </p>
+      </div>
+    </div>
+  </body>
+  <script src="./assets/script.js"></script>
+</html>
